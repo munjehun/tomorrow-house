@@ -6,4 +6,19 @@
 @import './base/normalize';
 @import './base/reset';
 
+@import './mixins/text-style';
+
 @import './layouts/grids';
+
+/*
+- mixin 사용예시
+
+@mixin flex($color){
+  display: flex;
+  color: $color;
+}
+
+p{
+  @include flex(blue);
+}
+*/
