@@ -1,0 +1,25 @@
+@mixin responsive($screen) {
+  @if ($screen == 'T') {
+    @media screen and (min-width: $md-breakpoint) {
+      @content;
+    }
+  }
+  @if ($screen == 'D') {
+    @media screen and (min-width: $lg-breakpoint) {
+      @content;
+    }
+  }
+}
+
+// 예시
+
+// .section {
+//   @include responsive(T) {
+//     font-size: 10px;
+//     color: red;
+//   }
+//   @include responsive(D) {
+//     font-size: 12px;
+//     color: blanchedalmond;
+//   }
+// }
