@@ -1,0 +1,52 @@
+// 변수(?) 사용할 때 @include 안 써줘도 됨
+// 스타일 코드 자체가 아니라 어떠한 값 하나만 반환
+// @function between() {
+//   @return space-between;
+// }
+// @function end() {
+//   @return flex-end;
+// }
+// @function around() {
+//   @return space-around;
+// }
+// @function start() {
+//   @return flex-start;
+// }
+
+// scss 의 Map 문법
+$flex-map: (
+  start: flex-start,
+  end: flex-end,
+  between: space-between,
+  around: space-around,
+  stretch: stretch,
+  center: center,
+);
+
+// Map을 사용하기 위한 내장함수 : map-get()
+@function _get-flex-value($key) {
+  @return map-get($flex-map, $key);
+}
+
+@mixin flexbox($jc: center, $ai: center) {
+  display: flex;
+  justify-content: _get-flex-value($jc);
+  align-items: _get-flex-value($ai);
+}
+
+@mixin inline-flexbox($jc: center, $ai: center) {
+  display: inline-flex;
+  justify-content: _get-flex-value($jc);
+  align-items: _get-flex-value($ai);
+}
+
+@mixin culumn-flexbox($jc: center, $ai: center) {
+  display: flex;
+  flex-direction: column;
+  justify-content: _get-flex-value($jc);
+  align-items: _get-flex-value($ai);
+}
+
+// .modal {
+//   @include culumn-flexbox();
+// }
