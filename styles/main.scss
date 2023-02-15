@@ -9,8 +9,7 @@
 
 @import './mixins/text-style';
 @import './mixins/responsive';
-
-@import './layouts/grids';
+@import './mixins/positions';
 
 /*
 - mixin 사용예시
@@ -24,3 +23,5 @@ p{
   @include flex(blue);
 }
 */
+
+@import './layouts/grids';
