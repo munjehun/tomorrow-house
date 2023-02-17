@@ -13,15 +13,35 @@
 @import './mixins/flexbox';
 
 /*
-- mixin 사용예시
+- mixin 사용 예시
 
+- 정의
 @mixin flex($color){
   display: flex;
   color: $color;
 }
 
+- 사용
 p{
   @include flex(blue);
+}
+*/
+
+@import './modules/tags';
+
+/*
+-플레이스 홀더 사용 예시
+// 인자를 받을 수 없음, 확장성이 떨어짐,
+
+- 정의
+%tag-base {
+  @include inline-flexbox;
+  border-radius: 4px;
+}
+
+- 사용
+.tag-green {
+  @extend %tag-base;
 }
 */
 

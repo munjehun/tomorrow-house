@@ -1,0 +1,27 @@
+%tag-base {
+  //플레이스 홀더 : 공통 스타일
+  // 인자를 받을 수 없음, 확장성이 떨어짐,
+
+  @include inline-flexbox;
+  @include text-style(12);
+  font-weight: 700;
+  height: 20px;
+  padding: 0 6px;
+  border-radius: 4px;
+}
+
+.tag-red {
+  @extend %tag-base;
+  color: $white;
+  background-color: $red;
+}
+.tag-green {
+  @extend %tag-base;
+  color: $white;
+  background-color: $green;
+}
+.tag-grey {
+  @extend %tag-base;
+  background-color: $border;
+  color: $secondary;
+}
