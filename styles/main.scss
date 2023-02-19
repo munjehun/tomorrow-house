@@ -30,7 +30,7 @@ p{
 @import './modules/tags';
 @import './modules/avatars';
 @import './modules/star-ratings';
-
+@import './modules/prices';
 /*
 -플레이스 홀더 사용 예시
 // 인자를 받을 수 없음, 확장성이 떨어짐,
@@ -46,5 +46,4 @@ p{
   @extend %tag-base;
 }
 */
-
 @import './layouts/grids';
