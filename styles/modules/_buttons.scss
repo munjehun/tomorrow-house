@@ -1,0 +1,72 @@
+// 버튼은 크게 3가지 (스타일, 사이즈, 상태) 에 따라 다르다.
+%btn-base {
+  @include inline-flexbox;
+  padding: 0 8px;
+  border-radius: 4px;
+  font-weight: 700;
+  transition: all 0.2s ease-in-out;
+
+  &:disabled {
+    opacity: 0.4;
+    cursor: not-allowed; //클릭금지 아이콘 나옴
+  }
+}
+
+// NOTE : Button Styles
+.btn-primary {
+  @extend %btn-base;
+  color: $white;
+  background-color: $blue;
+
+  // 💯 disabled가 아닌 것의 hover일 때
+  &:not(:disabled):hover {
+    background-color: $blue-dark;
+  }
+}
+.btn-secondary {
+  @extend %btn-base;
+  color: $primary;
+  background-color: $border;
+
+  &:not(:disabled):hover {
+    background-color: $tertiary;
+  }
+}
+.btn-outlined {
+  @extend %btn-base;
+  color: $blue;
+  background-color: $white;
+  border: 1px solid $blue;
+
+  &:not(:disabled):hover {
+    background-color: $blue-light;
+  }
+}
+.btn-ghost {
+  @extend %btn-base;
+  color: $primary;
+  background-color: transparent;
+
+  &:not(:disabled):hover {
+    color: $secondary;
+  }
+}
+
+// width는 보통 글자의 길이에 따라 가변하므로 height만 지정해준다.
+// NOTE : Button Sizes
+.btn-32 {
+  height: 32px;
+  @include text-style(14);
+}
+.btn-40 {
+  height: 40px;
+  @include text-style(16);
+}
+.btn-48 {
+  height: 48px;
+  @include text-style(16);
+}
+.btn-55 {
+  height: 55px;
+  @include text-style(18);
+}
