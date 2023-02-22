@@ -23,12 +23,12 @@
   }
 }
 
-// Select
 .form-select,
-.input-group {
+.form-input {
   @extend %form-base;
 }
 
+// Select
 .select-group {
   position: relative;
 
@@ -69,8 +69,7 @@
     color: $secondary;
     font-size: 20px;
   }
-  .form-search-input {
-    padding-left: 20px;
-    @include pos-center-y;
+  .form-input {
+    padding-left: 40px;
   }
 }
