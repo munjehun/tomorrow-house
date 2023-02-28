@@ -1,0 +1,43 @@
+.gnb {
+  position: relative;
+  border-bottom: 1px solid $border;
+
+  &-wrapper {
+    @include flexbox(between);
+    height: 50px;
+  }
+
+  .logo {
+    @include pos-center;
+    a {
+      display: block;
+    }
+    img {
+      display: block; //img는 display:block; 처리
+      width: auto;
+      height: 20px;
+    }
+  }
+
+  //💯 gnb- ~~ 처럼 반복적으로 붙이지 않고 '&'으로 축약표현 가능
+  &-icon-button {
+    @include flexbox;
+    width: 32px;
+    height: 32px;
+    font-size: 24px;
+    color: $secondary;
+  }
+  &-menu-button {
+    color: $blue;
+  }
+
+  &-right {
+    .button-group {
+      @include flexbox(end);
+
+      .gnb-search-button {
+        margin-right: 4px;
+      }
+    }
+  }
+}
