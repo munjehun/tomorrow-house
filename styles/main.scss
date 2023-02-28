@@ -52,5 +52,7 @@ p{
   @extend %tag-base;
 }
 */
+@import './components/gnb-nav';
+
 @import './layouts/grids';
 @import './layouts/gnb';

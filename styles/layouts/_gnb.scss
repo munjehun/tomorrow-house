@@ -27,6 +27,7 @@
     font-size: 24px;
     color: $secondary;
   }
+
   &-menu-button {
     color: $blue;
   }
@@ -37,6 +38,55 @@
 
       .gnb-search-button {
         margin-right: 4px;
+      }
+    }
+  }
+
+  @include responsive(T) {
+    &-wrapper {
+      height: 80px;
+    }
+
+    &-left {
+      @include flexbox(start);
+    }
+
+    &-right {
+      @include flexbox(end);
+
+      .button-group {
+        margin-right: 24px;
+
+        .gnb-icon-button {
+          margin-right: 8px;
+        }
+      }
+    }
+
+    .logo {
+      position: static; //position : absolute center 해제
+      transform: none; //transform 속성은 개별적으로 해제
+      margin-right: 32px;
+
+      img {
+        height: 24px;
+      }
+    }
+
+    .btn-primary {
+      width: 88px;
+
+      i {
+        margin-left: 4px;
+      }
+    }
+  }
+
+  @include responsive(D) {
+    &-right {
+      .input-group {
+        margin-right: 24px;
+        width: 264px;
       }
     }
   }

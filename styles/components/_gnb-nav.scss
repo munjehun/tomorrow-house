@@ -1,0 +1,21 @@
+// module처럼 자주 쓰이진 않지만 layout보다 크지 않은 중간 사이즈의 요소
+
+.gnb-nav {
+  @include flexbox(start);
+
+  &-list {
+    @include flexbox;
+  }
+
+  &-item {
+    margin-right: 24px;
+    &:last-child {
+      margin-right: 0;
+    }
+
+    a {
+      @include text-style(18, $primary);
+      font-weight: 700;
+    }
+  }
+}
