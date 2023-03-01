@@ -19,15 +19,6 @@
     }
   }
 
-  //💯 gnb- ~~ 처럼 반복적으로 붙이지 않고 '&'으로 축약표현 가능
-  &-icon-button {
-    @include flexbox;
-    width: 32px;
-    height: 32px;
-    font-size: 24px;
-    color: $secondary;
-  }
-
   &-menu-button {
     color: $blue;
   }
@@ -35,10 +26,10 @@
   &-right {
     .button-group {
       @include flexbox(end);
+    }
 
-      .gnb-search-button {
-        margin-right: 4px;
-      }
+    .gnb-icon-button.is-search {
+      margin-right: 4px;
     }
   }
 

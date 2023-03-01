@@ -1,0 +1,22 @@
+//💯 gnb- ~~ 처럼 반복적으로 붙이지 않고 '&'으로 축약표현 가능
+.gnb-icon-button {
+  @include flexbox;
+  width: 32px;
+  height: 32px;
+  font-size: 24px;
+  color: $secondary;
+  transition: all 0.2s ease-in-out;
+
+  &.is-menu {
+    color: $blue;
+
+    &:active {
+      color: $blue-dark;
+    }
+  }
+
+  &:active {
+    color: $primary;
+    font-weight: 700;
+  }
+}
