@@ -51,6 +51,23 @@
         .gnb-icon-button {
           margin-right: 8px;
         }
+
+        .gnb-auth {
+          margin-left: 8px;
+
+          a {
+            @include text-style(14, $secondary);
+            font-weight: 700;
+
+            &:hover {
+              color: $blue;
+            }
+
+            &.login {
+              margin-right: 12px;
+            }
+          }
+        }
       }
     }
 
@@ -69,6 +86,16 @@
 
       i {
         margin-left: 4px;
+      }
+    }
+
+    &-avatar-button {
+      padding: 3px;
+      border-radius: 50%;
+      transition: all 0.2s ease-in-out;
+
+      &:hover {
+        background-color: $blue;
       }
     }
   }
