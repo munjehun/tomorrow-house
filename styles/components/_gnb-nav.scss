@@ -1,14 +1,26 @@
 // module처럼 자주 쓰이진 않지만 layout보다 크지 않은 중간 사이즈의 요소
 
 .gnb-nav {
+  $padding: 8px;
+
   @include flexbox(start);
 
   &-list {
     @include flexbox;
+    margin-left: -$padding;
   }
 
   &-item {
-    margin-right: 24px;
+    margin-right: 24px - ($padding * 2);
+
+    &.is-active,
+    &:hover {
+      a {
+        //a 선택자 넣는 이유 : li선택자로 적용하면 아래의 a태그 스타일에 덮여씌여져서 스타일이 적용❌
+        color: $blue;
+      }
+    }
+
     &:last-child {
       margin-right: 0;
     }
@@ -16,6 +28,8 @@
     a {
       @include text-style(18, $primary);
       font-weight: 700;
+      display: block; //a태그는 inline이기 때문에 padding 위아래를 줄 수 없으므로 block 처리
+      padding: $padding; //사용성 증대를 위해 클릭영역 크게 만들기
     }
   }
 }
