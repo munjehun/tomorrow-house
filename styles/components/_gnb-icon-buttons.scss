@@ -1,10 +1,12 @@
 //💯 gnb- ~~ 처럼 반복적으로 붙이지 않고 '&'으로 축약표현 가능
 .gnb-icon-button {
   @include flexbox;
+  position: relative;
   width: 32px;
   height: 32px;
   font-size: 24px;
   color: $secondary;
+  border-radius: 100%; //hover에서 지정시 transition할때 이상하게 바뀌므로 미리 둥글게
   transition: all 0.2s ease-in-out;
 
   &.is-menu {
@@ -18,5 +20,30 @@
   &:active {
     color: $primary;
     font-weight: 700;
+  }
+
+  .badge {
+    display: block; //strong은 inline이므로 block 처리
+    position: absolute;
+    top: 0;
+    right: 0;
+    border-radius: 10px;
+    background-color: $red;
+    min-width: 16px;
+    height: 16px;
+    color: $white;
+    font-size: 10px;
+    line-height: 16px;
+    letter-spacing: -0.01em;
+    text-align: center;
+    padding: 0 4px;
+  }
+
+  // 모바일에서는 효과가 없으므로
+  @include responsive(T) {
+    &:hover {
+      background-color: $blue;
+      color: $white;
+    }
   }
 }
