@@ -122,18 +122,31 @@
                     <i class="ic-search"></i>
                   </button>
 
-                  <button
-                    type="button"
-                    class="gnb-avatar-button sm-hidden"
-                    aria-label="마이 메뉴 열기 버튼"
-                  >
-                    <div class="avatar-32">
-                      <img
-                        src="./assets/images/img-user-01.jpg"
-                        alt="사딸라 아저씨"
-                      />
+                  <div class="my-menu sm-hidden">
+                    <button
+                      type="button"
+                      class="my-menu-button is-active"
+                      aria-label="마이 메뉴 열기 버튼"
+                    >
+                      <div class="avatar-32">
+                        <img
+                          src="./assets/images/img-user-01.jpg"
+                          alt="사딸라 아저씨"
+                        />
+                      </div>
+                    </button>
+
+                    <div class="my-menu-content">
+                      <ul class="my-menu-list">
+                        <li class="my-menu-item"><a href="/">마이페이지</a></li>
+                        <li class="my-menu-item"><a href="/">나의 쇼핑</a></li>
+                        <li class="my-menu-item"><a href="/">이벤트</a></li>
+                        <li class="my-menu-item">
+                          <button type="button">로그아웃</button>
+                        </li>
+                      </ul>
                     </div>
-                  </button>
+                  </div>
                 </div>
 
                 <!-- NOTE : 로그인을 하지 않은 경우 -->
@@ -156,7 +169,7 @@
                   </a>
 
                   <div class="gnb-auth sm-hidden">
-                    <a href="/" class="login">로그인</a>
+                    <a href="/">로그인</a>
                     <a href="/">로그아웃</a>
                   </div>
                 </div> -->
