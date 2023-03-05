@@ -44,6 +44,7 @@
 
     &-right {
       @include flexbox(end);
+      position: relative;
 
       .button-group {
         margin-right: 24px;
@@ -59,12 +60,12 @@
             @include text-style(14, $secondary);
             font-weight: 700;
 
-            &:hover {
-              color: $blue;
+            &:first-child {
+              margin-right: 12px;
             }
 
-            &.login {
-              margin-right: 12px;
+            &:hover {
+              color: $blue;
             }
           }
         }

@@ -2,10 +2,32 @@
   $tooltip-size: 12px;
   position: relative;
 
+  &-button {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    border: 3px solid $white;
+    overflow: hidden;
+    transition: all 0.2s ease-in-out;
+
+    &.is-active,
+    &:hover {
+      border-color: $blue;
+    }
+
+    img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
   &-content {
     @include pos-center-x; //mixin 안에 position : absolute 포함됨
     box-shadow: $dropdown-shadow;
     border-radius: 4px;
+    top: 50px;
 
     &::before,
     &::after {
