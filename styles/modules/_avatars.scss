@@ -3,6 +3,12 @@
   overflow: hidden;
   border: none;
   border-radius: 50%;
+
+  // 유저 이미지 없을 때, 기본이미지 설정
+  background-image: url('/assets/images/img-user-default.png');
+  background-size: contain;
+  background-position: center center;
+
   img {
     display: block;
     width: 100%;
