@@ -1,0 +1,59 @@
+.sidebar {
+  background-color: #fff;
+  width: 240px;
+  // height는 100vh로 고정이지만 일단 전체를 다 만들어 본다.
+  padding: 32px 20px;
+
+  .sidebar-header {
+    padding: 12px;
+
+    .sidebar-logo {
+      @include flexbox(start);
+      a {
+        display: block;
+      }
+
+      img {
+        display: block;
+        width: auto;
+        height: 20px;
+      }
+    }
+  }
+
+  // 내부 요소는 어차피 중앙 위치니까
+  &-user,
+  &-auth {
+    height: 88px;
+    @include flexbox(start);
+  }
+
+  &-user {
+    a {
+      @include flexbox(start);
+      @include text-style(14, $primary);
+      font-weight: 700;
+      width: 100%; //닉네임이 길어서 넘어가는 것 제한하기 위해
+
+      .avatar-24 {
+        margin-right: 8px;
+        flex-shrink: 0;
+      }
+
+      .username {
+        flex-grow: 1;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+    }
+  }
+
+  &-auth {
+    @include flexbox(between);
+
+    a {
+      width: 84px;
+    }
+  }
+}
