@@ -53,9 +53,12 @@ p{
   @extend %tag-base;
 }
 */
+
+// components : 모듈보다는 크고 레이아웃 보다는 작은 UI컴포넌트
 @import './components/gnb-nav';
 @import './components/gnb-icon-buttons';
 @import './components/my-menu';
+@import './components/drawer-menu';
 
 @import './layouts/grids';
 @import './layouts/gnb';
