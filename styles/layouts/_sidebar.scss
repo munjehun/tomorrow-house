@@ -6,6 +6,7 @@
 
   .sidebar-header {
     padding: 12px;
+    border-bottom: 1px solid $border;
 
     .sidebar-logo {
       @include flexbox(start);
