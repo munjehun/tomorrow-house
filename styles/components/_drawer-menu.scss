@@ -1,11 +1,11 @@
 .drawer-menu {
-  border-bottom: 1px solid $border;
+  border-top: 1px solid $border;
 
   $list-item-height: 36px;
   $community-item-length: 8;
   $store-item-length: 9;
   $expert-item-length: 8;
-  $list-margin: 8px;
+  $list-margin: 20px;
 
   @function _calculate-content-max-height($length) {
     @return $list-item-height * $length + $list-margin;
