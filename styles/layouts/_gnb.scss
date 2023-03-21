@@ -102,10 +102,40 @@
   }
 
   @include responsive(D) {
-    &-right {
+    &-search {
+      position: relative;
+      width: 264px;
+      margin-right: 24px;
+
       .input-group {
-        margin-right: 24px;
-        width: 264px;
+        width: 100%;
+      }
+
+      .search-history {
+        position: absolute;
+        width: 100%;
+        background-color: $white;
+        border: 1px solid $border;
+        border-radius: 4px;
+        padding: 8px;
+        top: calc(100% + 8px);
+        left: 0;
+        box-shadow: $dropdown-shadow;
+        visibility: hidden;
+        opacity: 0;
+        transform: translate3d(0, -10px, 0);
+        transition: all 100ms ease-in-out;
+
+        &.is-active {
+          visibility: visible;
+          opacity: 1;
+          transform: translate3d(0, 0, 0);
+        }
+
+        &-header {
+          padding: 8px;
+          margin-bottom: 0;
+        }
       }
     }
   }
