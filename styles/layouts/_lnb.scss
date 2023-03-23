@@ -1,0 +1,42 @@
+.lnb {
+  overflow-x: auto; //
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  &-list {
+    @include inline-flexbox(start);
+    position: relative;
+    left: -8px;
+    white-space: nowrap;
+    height: 40px;
+    border-bottom: 1px solid $border;
+
+    .lnb-item {
+      a {
+        @include inline-flexbox; //container들끼리 수평 정렬, 별도의 width를 지정해주지 않으면 자식 contents만큼 정해짐
+        @include text-style(13, $dark);
+        font-weight: 700;
+        height: 40px;
+        padding: 0 8px;
+        border-bottom: 2px solid transparent;
+
+        .ic-new {
+          color: $red;
+        }
+
+        &:hover {
+          color: $blue;
+        }
+      }
+
+      &.is-active {
+        a {
+          color: $blue;
+          border-bottom: 2px solid $blue;
+        }
+      }
+    }
+  }
+}
