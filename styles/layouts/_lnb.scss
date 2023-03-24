@@ -1,4 +1,6 @@
 .lnb {
+  $lnb-height-sm: 40px;
+  $lnb-height-md: 50px;
   $lnb-link-padding: 8px;
   $grid-margin: $sm-margin + $gutter / 2;
 
@@ -7,7 +9,8 @@
 
   &-list {
     @include inline-flexbox(start);
-    height: 40px;
+    width: 100vw;
+    height: $lnb-height-sm;
     padding: 0 $grid-margin - $lnb-link-padding;
     margin-left: -#{$grid-margin};
     white-space: nowrap;
@@ -18,7 +21,7 @@
         @include inline-flexbox; //container들끼리 수평 정렬, 별도의 width를 지정해주지 않으면 자식 contents만큼 정해짐
         @include text-style(13, $dark);
         font-weight: 700;
-        height: 40px;
+        height: $lnb-height-sm;
         padding: 0 $lnb-link-padding;
         border-bottom: 2px solid transparent;
 
@@ -31,6 +34,26 @@
         a {
           color: $blue;
           border-bottom-color: $blue;
+        }
+      }
+    }
+  }
+
+  @include responsive(T) {
+    overflow-x: visible; //auto 해제
+    height: $lnb-height-md;
+    border-bottom: 1px solid $border;
+
+    &-list {
+      height: auto;
+      padding: 0;
+      margin-left: 0;
+      border-bottom: 0;
+
+      .lnb-item {
+        a {
+          @include text-style(14);
+          height: $lnb-height-md;
         }
       }
     }
