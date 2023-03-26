@@ -4,6 +4,7 @@
 @import './constants/breakpoints';
 @import './constants/box-shadows';
 @import './constants/z-indexes';
+@import './constants/dimensions';
 
 @import './base/fonts';
 @import './base/normalize';
@@ -69,4 +70,5 @@ p{
 @import './layouts/overlay';
 @import './layouts/search-modal';
 @import './layouts/lnb';
+@import './layouts/global-header';
 @import './layouts/footer';
