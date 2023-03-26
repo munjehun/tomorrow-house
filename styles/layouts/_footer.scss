@@ -1,0 +1,73 @@
+.global-footer {
+  padding: 32px 0 40px 0;
+  background-color: $background;
+
+  &-title {
+    @include text-style(13, $dark);
+    font-weight: 700;
+
+    .ic-chevron {
+      display: inline-block;
+      transform: rotate(-90deg);
+      font-size: 12px;
+    }
+  }
+
+  &-contact {
+    @include text-style(24, $dark);
+    font-weight: 700;
+  }
+
+  &-time {
+    @include text-style(12, $primary);
+    margin-bottom: 24px;
+  }
+
+  &-detail-list {
+    .global-footer-detail-item {
+      dt,
+      dd {
+        font-size: 10px;
+        line-height: 16px;
+        letter-spacing: -0.01em;
+        display: inline-block;
+        color: $secondary;
+      }
+
+      dt::after {
+        content: ' :';
+      }
+    }
+  }
+
+  @include responsive(D) {
+    &-title {
+      @include text-style(14, $dark);
+    }
+
+    &-contact:hover {
+      opacity: 0.5;
+    }
+
+    &-time {
+      color: $secondary;
+    }
+
+    &-detail-list {
+      @include flexbox(start);
+    }
+
+    &-detail-item {
+      a:hover {
+        text-decoration: underline;
+      }
+
+      &:not(:last-child)::after {
+        content: '|';
+        font-size: 10px;
+        color: $secondary;
+        margin: 0 6px 0 4px;
+      }
+    }
+  }
+}
