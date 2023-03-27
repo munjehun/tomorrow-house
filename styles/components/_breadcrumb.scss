@@ -1,0 +1,42 @@
+.breadcrumb {
+  @include flexbox(start);
+  flex-wrap: wrap; //breadcrumb가 극단적으로 긴 경우 대비
+  padding: 10px 0;
+
+  a {
+    @include text-style(13, $secondary);
+
+    &:active {
+      opacity: 0.6;
+    }
+  }
+  .ic-chevron {
+    display: inline-block;
+    font-size: 12px;
+    color: $tertiary;
+    transform: rotate(-90deg);
+    margin: 0 2px;
+  }
+
+  @include responsive(T) {
+    padding: 16px 0;
+
+    a {
+      @include text-style(14);
+    }
+
+    .ic-chevron {
+      margin: 0 4px;
+    }
+  }
+
+  // 모바일과 태블릿에서는 hover가 의미가 없으니 데스크탑에서만 hover 대응
+  @include responsive(D) {
+    padding-top: 24px;
+    padding-bottom: 40px;
+
+    a:hover {
+      opacity: 0.5;
+    }
+  }
+}
