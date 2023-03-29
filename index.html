@@ -5,7 +5,6 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./style.css" />
     <title>
       전기히터 &gt; 캠핑/가정용 400W 미니멀 전기히터 VO-HT015 (안전장치기능탑재)
       | 내일의 집
@@ -34,6 +33,12 @@
       href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap"
       rel="stylesheet"
     />
+    <!-- carousel (tiny-slider)은 커스텀 css보다는 먼저 불러오도록! -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.4/tiny-slider.css"
+    />
+    <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
     <header class="global-header">
@@ -608,5 +613,8 @@
 
     <!-- 그림자를 위한 의미없는 div -->
     <div class="overlay" aria-hidden></div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.2/min/tiny-slider.js"></script>
+    <script src="./js/productCarousel.js"></script>
   </body>
 </html>
