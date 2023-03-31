@@ -50,7 +50,7 @@
   }
 
   @include responsive(T) {
-    padding-right: 30px;
+    padding-right: 30px; //컬럼 6개에서 -30px
 
     &-slider {
       margin: 0;
@@ -79,8 +79,7 @@
         }
       }
       button {
-        // border가 생겨도 이미지가 움직이지 않도록 위치 고정
-        @include flexbox;
+        @include flexbox; // border가 생겨도 이미지가 움직이지 않도록 위치 고정
         width: 56px;
         height: 56px;
         opacity: 1;
@@ -93,6 +92,47 @@
         // border가 생겨도 이미지가 작아지지 않도록 크기 고정
         width: 56px;
         height: 56px;
+      }
+    }
+  }
+
+  @include responsive(D) {
+    @include flexbox(end, start);
+    flex-direction: row-reverse;
+    padding: 0;
+
+    &-slider {
+      width: 500px;
+      height: 500px;
+    }
+
+    &-thumbnail {
+      margin: 0 8px 0 0;
+    }
+
+    .thumbnail-list {
+      @include culumn-flexbox(start);
+    }
+
+    .thumbnail-item {
+      margin: 0 0 8px 0;
+
+      &.tns-nav-active {
+        button {
+          transform: none;
+          border: 2px solid $blue;
+        }
+      }
+      button {
+        @include flexbox; // border가 생겨도 이미지가 움직이지 않도록 위치 고정
+        width: 75px;
+        height: 75px;
+      }
+
+      img {
+        // border가 생겨도 이미지가 작아지지 않도록 크기 고정
+        width: 75px;
+        height: 75px;
       }
     }
   }
