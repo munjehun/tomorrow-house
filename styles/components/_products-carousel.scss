@@ -1,6 +1,47 @@
 .product-carousel {
+  $grid-margin: 15px;
+
+  position: relative;
+
+  &-slider {
+    margin: 0 -#{$grid-margin};
+  }
+
   &-thumbnail {
-    display: none;
+    @include pos-center-x;
+    bottom: 16px;
+
+    .thumbnail {
+      &-list {
+        @include flexbox;
+      }
+      &-item {
+        @include flexbox;
+        margin: 0 4px;
+
+        //브라우저 엘리멘트 탭에서 버튼을 클릭해보면 tns-nav-active라는 클래스가 생김
+        &.tns-nav-active {
+          button {
+            // transition을 주기 위해 width 변경보다 scale로 크기 변경
+            transform: scale(1.33333);
+            opacity: 1;
+          }
+        }
+        button {
+          width: 6px;
+          height: 6px;
+          border-radius: 50%;
+          box-shadow: $dropdown-shadow;
+          opacity: 0.7;
+          background-color: $white;
+          transition: all 100ms ease-in-out;
+        }
+
+        img {
+          display: none;
+        }
+      }
+    }
   }
 
   img {
