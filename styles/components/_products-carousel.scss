@@ -48,4 +48,52 @@
     width: 100%;
     height: auto;
   }
+
+  @include responsive(T) {
+    padding-right: 30px;
+
+    &-slider {
+      margin: 0;
+      border-radius: 4px;
+      overflow: hidden;
+    }
+
+    &-thumbnail {
+      @include flexbox(start);
+      position: static;
+      transform: none;
+      margin-top: 8px;
+    }
+
+    .thumbnail-list {
+      @include flexbox(start);
+    }
+
+    .thumbnail-item {
+      margin: 0 8px 0 0;
+
+      &.tns-nav-active {
+        button {
+          transform: none;
+          border: 2px solid $blue;
+        }
+      }
+      button {
+        // border가 생겨도 이미지가 움직이지 않도록 위치 고정
+        @include flexbox;
+        width: 56px;
+        height: 56px;
+        opacity: 1;
+        border-radius: 4px;
+        overflow: hidden;
+      }
+
+      img {
+        display: block;
+        // border가 생겨도 이미지가 작아지지 않도록 크기 고정
+        width: 56px;
+        height: 56px;
+      }
+    }
+  }
 }
