@@ -23,7 +23,8 @@
       &-review {
         @include flexbox(start);
 
-        .star-rating-13 {
+        .star-rating {
+          @include star-rating(13px);
           margin-right: 8px;
         }
 
@@ -74,12 +75,89 @@
   }
 
   &-delivery {
-    border-top: 1px solid $border;
+    @include text-style(16, $primary);
     padding-top: 12px;
+    border-top: 1px solid $border;
 
     span {
       display: block;
       margin-bottom: 2px;
+    }
+  }
+
+  @include responsive(T) {
+    padding: 0;
+
+    &-header {
+      .info {
+        &-brand {
+          display: inline-block; //block으로 하면 한 줄 다 링크가 되므로
+          margin-bottom: 8px;
+        }
+
+        &-title {
+          @include text-style(24, $dark);
+          margin-bottom: 8px;
+        }
+
+        &-review {
+          .star-rating {
+            @include star-rating(16px);
+          }
+
+          p {
+            strong {
+              margin-right: -3px;
+            }
+          }
+        }
+      }
+    }
+
+    &-price {
+      .info-price-wrapper {
+        @include flexbox(start, end);
+        margin-bottom: 12px;
+      }
+
+      .discount-rate {
+        @include flexbox(start, end);
+        color: $blue;
+        font-weight: 700;
+        margin-right: 16px;
+
+        .rate {
+          font-family: $font-price;
+          font-size: 44px;
+          line-height: 36px;
+        }
+
+        .percent {
+          font-size: 20px;
+          line-height: 20px;
+        }
+      }
+
+      .info-sale-price {
+        margin-bottom: 0;
+
+        .price-32 {
+          margin-right: 8px;
+        }
+      }
+
+      .info-point {
+        margin-bottom: 20px;
+      }
+    }
+
+    &-delivery {
+      border-bottom: 1px solid $border;
+      padding: 16px 0 20px 0;
+
+      span {
+        margin-bottom: 8px;
+      }
     }
   }
 }
