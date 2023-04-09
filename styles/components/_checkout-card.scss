@@ -20,6 +20,11 @@
       height: 20px;
       font-size: 20px;
       color: $secondary;
+
+      &:active,
+      &:hover {
+        opacity: 0.4;
+      }
     }
   }
 
@@ -30,6 +35,16 @@
       display: inline-block;
       position: relative;
 
+      &:hover {
+        select {
+          border-color: $tertiary;
+        }
+
+        i {
+          color: $secondary;
+        }
+      }
+
       select {
         width: 72px;
         height: 24px;
@@ -38,6 +53,7 @@
         border-radius: 3px;
         border: 1px solid $border;
         appearance: none; //select 태그의 기본 화살표 제거
+        transition: border-color 100ms ease-in-out;
       }
 
       i {
@@ -46,6 +62,7 @@
         color: $tertiary;
         right: 2px;
         pointer-events: none;
+        transition: color 100ms ease-in-out;
       }
     }
 
