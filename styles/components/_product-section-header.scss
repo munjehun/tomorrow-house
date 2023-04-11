@@ -1,0 +1,62 @@
+.product-section-header {
+  @include flexbox(start);
+  width: 100%;
+  height: 64px;
+  position: relative;
+  background-color: $white;
+
+  .title {
+    @include text-style(16, $dark);
+    // font-weight: 700; h1은 기본 700이므로
+  }
+
+  .badge {
+    @include text-style(16, $blue);
+    margin-left: 8px; //badge가 있을 때에만 마진이 필요하므로 badge에 마진
+  }
+
+  .text-button,
+  .icon-button {
+    @include pos-center-y;
+    // for UX
+    right: -15px;
+    padding: 15px;
+
+    &:active {
+      opacity: 0.4;
+    }
+  }
+
+  .text-button {
+    @include text-style(14, $blue);
+    font-weight: 700;
+  }
+
+  .icon-button {
+    @include flexbox;
+    font-size: 22px;
+    color: $secondary;
+
+    &.is-right {
+      transform: translateY(-50%) rotate(-90deg); //⚠️덮어쓰임 주의⚠️
+    }
+  }
+
+  @include responsive(T) {
+    .title,
+    .badge {
+      @include text-style(18);
+    }
+
+    .text-button,
+    .icon-button {
+      &:hover {
+        opacity: 0.4;
+      }
+    }
+
+    .text-button {
+      @include text-style(16);
+    }
+  }
+}
