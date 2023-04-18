@@ -19,8 +19,8 @@
   .icon-button {
     @include pos-center-y;
     // for UX
-    right: -15px;
-    padding: 15px;
+    right: -#{$grid-margin};
+    padding: $grid-margin;
 
     &:active {
       opacity: 0.4;
