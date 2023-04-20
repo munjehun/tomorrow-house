@@ -1,5 +1,40 @@
 .product-spec {
+  position: relative;
+  height: 470px;
   padding-top: 20px;
+  overflow: hidden;
+
+  &.is-open {
+    height: auto;
+
+    .button-wrapper {
+      display: none;
+    }
+  }
+
+  .button-wrapper {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    padding-bottom: 20px;
+    background-color: $white;
+
+    &::before {
+      position: absolute;
+      bottom: 55px + 20px; //button높이 + padding-bottom
+      left: 0;
+      content: '';
+      display: block;
+      width: 100%;
+      height: 64px;
+      background: linear-gradient(to top, $white, transparent);
+    }
+
+    button {
+      width: 100%;
+    }
+  }
 
   figure {
     img {
