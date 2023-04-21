@@ -110,7 +110,7 @@
     }
 
     .thumbnail-list {
-      @include culumn-flexbox(start);
+      @include column-flexbox(start);
     }
 
     .thumbnail-item {

@@ -40,7 +40,7 @@ $flex-map: (
   align-items: _get-flex-value($ai);
 }
 
-@mixin culumn-flexbox($jc: center, $ai: center) {
+@mixin column-flexbox($jc: center, $ai: center) {
   display: flex;
   flex-direction: column;
   justify-content: _get-flex-value($jc);
@@ -48,5 +48,5 @@ $flex-map: (
 }
 
 // .modal {
-//   @include culumn-flexbox();
+//   @include column-flexbox();
 // }
