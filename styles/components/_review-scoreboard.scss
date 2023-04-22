@@ -1,0 +1,132 @@
+.review-scoreboard {
+  @include flexbox;
+  width: 100%;
+  height: 152px;
+  background-color: $background;
+  border-radius: 4px;
+
+  &::before {
+    display: block;
+    content: '';
+    width: 1px;
+    height: 96px;
+    background-color: $border;
+    order: 2; //가상선택자도 .review-scoreboard의 자식 중 하나이므로 order로 순서처리
+  }
+
+  .score-summary,
+  .score-detail {
+    width: 50%;
+  }
+  .score-summary {
+    @include flexbox;
+    flex-direction: column;
+    order: 1;
+
+    .average-score {
+      @include text-style(24, $dark);
+      font-weight: 700;
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    .star-rating {
+      @include star-rating(20px);
+    }
+  }
+  .score-detail {
+    text-align: center;
+    order: 3;
+
+    .score-stats {
+      &-list {
+        display: inline-block;
+        //원래는 block으로 한 줄 다 차지했지만 inline으로 바꾸면서 자식의 콘텐츠만큼만 너비 설정
+      }
+
+      &-item {
+        @include flexbox(start);
+        @include text-style(12, $secondary);
+        margin-bottom: 4px;
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+
+        &.is-active {
+          color: $blue;
+          font-weight: 700;
+        }
+
+        dt {
+          margin-right: 4px;
+        }
+
+        dd {
+          @include flexbox();
+
+          .bar-graph {
+            margin-right: 4px;
+            width: 70px;
+            height: 5px;
+            border-radius: 10px;
+            background-color: $border;
+            overflow: hidden; //혹시라도 .active-bar가 밖으로 나가지 않게
+
+            .active-bar {
+              width: 40px;
+              height: 5px;
+              border-radius: 10px;
+              background-color: $blue;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @include responsive(T) {
+    @include flexbox(between);
+    height: 148px;
+    padding: 0 72px;
+
+    &::before {
+      height: 72px;
+    }
+
+    .score-summary,
+    .score-detail {
+      width: auto;
+    }
+
+    .score-summary {
+      flex-direction: row-reverse;
+
+      .average-score {
+        margin-bottom: 0;
+      }
+
+      .star-rating {
+        @include star-rating(24px);
+        margin-right: 16px;
+      }
+    }
+
+    .score-detail {
+      .score-stats {
+        &-item {
+          dt {
+            margin-right: 8px;
+          }
+
+          dd {
+            .bar-graph {
+              width: 180px;
+              margin-right: 8px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
