@@ -78,6 +78,17 @@
               height: 5px;
               border-radius: 10px;
               background-color: $blue;
+              animation-name: slide-active-bar;
+              animation-duration: 1000ms;
+            }
+
+            @keyframes slide-active-bar {
+              0% {
+                transform: translate3d(-100%, 0, 0);
+              }
+              100% {
+                transform: translate3d(0, 0, 0);
+              }
             }
           }
         }
