@@ -74,7 +74,7 @@
             overflow: hidden; //혹시라도 .active-bar가 밖으로 나가지 않게
 
             .active-bar {
-              width: 40px;
+              width: 0;
               height: 5px;
               border-radius: 10px;
               background-color: $blue;
