@@ -11,15 +11,8 @@
   }
 }
 
-// 예시
-
-// .section {
-//   @include responsive(T) {
-//     font-size: 10px;
-//     color: red;
-//   }
-//   @include responsive(D) {
-//     font-size: 12px;
-//     color: blanchedalmond;
-//   }
-// }
+@mixin mobile-only() {
+  @media screen and (max-width: $md-breakpoint - 1px) {
+    @content;
+  }
+}
