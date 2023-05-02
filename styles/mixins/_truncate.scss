@@ -1,0 +1,5 @@
+@mixin truncate() {
+  overflow: hidden;
+  white-space: nowrap; //무조건 한 줄 화
+  text-overflow: ellipsis; // ...
+}
