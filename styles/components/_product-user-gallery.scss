@@ -1,0 +1,11 @@
+.product-user-gallery {
+  .user-gallery {
+    margin: 0 -#{$grid-margin};
+  }
+
+  @include responsive(T) {
+    .user-gallery {
+      margin: 0;
+    }
+  }
+}
