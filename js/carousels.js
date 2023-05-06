@@ -17,7 +17,10 @@ const productCarousel = tns({
 
 const userGallery = tns({
   container: '.user-gallery .slider-list',
+  navContainer: '.user-gallery .thumbnail-list',
+  navAsThumbnails: true,
   controls: false,
+  controlsContainer: '.user-gallery-controls', //이전 다음 버튼 연결
   items: 1,
   gutter: 4, //다음 슬라이드와의 간격
   edgePadding: 16, //양 옆의 슬라이드가 삐져나오는 정도(px)
