@@ -49,7 +49,6 @@
 
   @include responsive(T) {
     padding-right: 30px; //컬럼 6개에서 -30px
-    margin-bottom: 40px; //product-tab과 간격늘리기 용도
 
     &-slider {
       margin: 0;
