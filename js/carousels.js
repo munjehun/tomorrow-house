@@ -15,12 +15,11 @@ const productCarousel = tns({
   preventScrollOnTouch: true, //터치로 전환할 때,콘솔 에러 메시지 안나오도록
 })
 
-const userGallery = tns({
-  container: '.user-gallery .slider-list',
-  navContainer: '.user-gallery .thumbnail-list',
+const userGalleryMobile = tns({
+  container: '.user-gallery.is-mobile .slider-list',
+  navContainer: '.user-gallery.is-mobile .thumbnail-list',
   navAsThumbnails: true,
   controls: false,
-  controlsContainer: '.user-gallery-controls', //이전 다음 버튼 연결
   items: 1,
   gutter: 4, //다음 슬라이드와의 간격
   edgePadding: 16, //양 옆의 슬라이드가 삐져나오는 정도(px)
@@ -28,11 +27,19 @@ const userGallery = tns({
   slideBy: 'page',
   mouseDrag: true,
   preventScrollOnTouch: true,
-  responsive: {
-    768: {
-      controls: true,
-      gutter: 6,
-      edgePadding: 75,
-    },
-  },
+})
+
+const userGalleryDesktop = tns({
+  container: '.user-gallery.is-desktop .slider-list',
+  navContainer: '.user-gallery.is-desktop .thumbnail-list',
+  navAsThumbnails: true,
+  controls: true,
+  controlsContainer: '.user-gallery.is-desktop .user-gallery-controls',
+  items: 1,
+  gutter: 6,
+  edgePadding: 75,
+  loop: false,
+  slideBy: 'page',
+  mouseDrag: true,
+  preventScrollOnTouch: true,
 })

@@ -57,8 +57,12 @@
       }
 
       &-controls {
+        @include flexbox(between);
+        @include pos-center;
+        width: 100%;
+        padding: 0 52px;
+
         .control-button {
-          @include pos-center-y;
           @include flexbox;
           width: 40px;
           height: 40px;
@@ -69,12 +73,10 @@
           transition: all 150ms ease-in-out;
 
           &.is-prev {
-            left: 52px;
             transform: rotate(90deg);
           }
 
           &.is-next {
-            right: 52px;
             transform: rotate(-90deg);
           }
 
