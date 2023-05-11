@@ -1,0 +1,53 @@
+.cart-modal {
+  @include pos-center(fixed);
+  width: calc(100vw - #{$grid-margin * 2});
+  max-width: 360px; //데스크탑용 너비
+  padding: 40px 24px;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0 4px 20px rgba(63, 65, 80, 0.3);
+  background-color: $white;
+  z-index: $cart-modal-level;
+
+  .cart-title {
+    @include text-style(16, $dark);
+    font-weight: 700;
+    margin-bottom: 24px;
+  }
+
+  .button-group {
+    width: 100%;
+
+    a,
+    button {
+      @include text-style(16);
+      width: 100%;
+      font-weight: 700;
+    }
+
+    a {
+      color: $white;
+      margin-bottom: 8px;
+    }
+    button {
+      color: $primary;
+    }
+  }
+
+  @include responsive(D) {
+    padding: 40px 32px;
+
+    .cart-title {
+      @include text-style(18);
+      margin-bottom: 16px;
+    }
+
+    .button-group {
+      a,
+      button {
+        @include text-style(18);
+        height: 55px;
+      }
+    }
+  }
+}
