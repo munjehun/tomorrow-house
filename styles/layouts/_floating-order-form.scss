@@ -1,8 +1,15 @@
 .floating-order-form {
+  $global-header-height: $gnb-height-md + $lnb-height-md +
+    $product-tab-height-md;
+
   @include column-flexbox;
-  top: $gnb-height-md + $lnb-height-md + 54px;
+  position: sticky;
+  top: $global-header-height;
   padding: 24px 0;
-  height: 700px; //임시
+
+  //lnb와 footer에 따라 height가 변하므로 우선 max-height와 min-height를 설정해준다.
+  max-height: calc(100vh - #{$global-header-height});
+  min-height: calc(100vh - #{$global-header-height + $global-footer-height});
 
   > * {
     width: 100%;
