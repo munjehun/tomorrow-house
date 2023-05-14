@@ -1,0 +1,43 @@
+.scrap-toast {
+  $close-button-size: 36px;
+
+  @include flexbox(between);
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 56px;
+  z-index: $scrap-toast-level;
+  background-color: $white;
+  box-shadow: $popup-reversed-shadow;
+  padding-left: $close-button-size;
+  padding-right: $grid-margin;
+
+  .close-button {
+    @include pos-center-y;
+    @include flexbox;
+    left: 0;
+    width: $close-button-size;
+    height: $close-button-size;
+    font-size: 20px;
+    color: $tertiary;
+
+    &:active {
+      color: $secondary;
+    }
+  }
+
+  .scrap-title {
+    @include text-style(13, $primary);
+    font-weight: 400;
+  }
+
+  .button-group {
+    @include flexbox(end);
+    //inline요소이므로 margin이 생길 수 밖에 없는데 이를 없애주기
+
+    a {
+      margin-right: 4px;
+    }
+  }
+}
