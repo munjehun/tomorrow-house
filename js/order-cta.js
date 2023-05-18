@@ -22,14 +22,13 @@ function toggleOrderCtaBookmark() {
   const [icon, countSpan] = this.children
   let count = parseInt(countSpan.innerHTML.replaceAll(',', ''))
 
-  this.classList.contains('is-active')
-    ? (icon.classList.replace('ic-bookmark-filled', 'ic-bookmark'),
-      (count -= 1))
-    : (icon.classList.replace('ic-bookmark', 'ic-bookmark-filled'),
-      (count += 1))
+  this.classList.contains('is-active') ? (count -= 1) : (count += 1)
 
   countSpan.innerHTML = count.toLocaleString()
+  countSpan.setAttribute('aria-label', `북마크 ${count.toLocaleString()}회`)
 
+  icon.classList.toggle('ic-bookmark')
+  icon.classList.toggle('ic-bookmark-filled')
   this.classList.toggle('is-active')
 }
 
