@@ -61,6 +61,8 @@ function detectTabPanelPosition() {
     const position = window.scrollY + panel.getBoundingClientRect().top
     productTabPanelPositionMap[id] = position
   })
+
+  updateActiveTabOnScroll()
 }
 
 function updateActiveTabOnScroll() {
@@ -82,9 +84,21 @@ function updateActiveTabOnScroll() {
     newActiveTab = productTabItemList[0]
   }
 
+  // 스크롤 끝까지 한 경우 : newActiveTab = productTabItemList[4]
+  // window.scrollY + window.innerHeight ==  document.body.offsetHeight
+
+  if (
+    window.scrollY + window.innerHeight + (window.innerWidth < 1200 ? 56 : 2) >=
+    document.body.offsetHeight
+  ) {
+    newActiveTab = productTabItemList[4]
+  }
+
   if (newActiveTab) {
     if (newActiveTab !== currentActiveTab) {
-      currentActiveTab.classList.remove('is-active')
+      if (currentActiveTab) {
+        currentActiveTab.classList.remove('is-active')
+      }
       newActiveTab.classList.add('is-active')
       currentActiveTab = newActiveTab
     }
@@ -93,4 +107,4 @@ function updateActiveTabOnScroll() {
 
 window.addEventListener('load', detectTabPanelPosition)
 window.addEventListener('resize', detectTabPanelPosition)
-window.addEventListener('scroll', updateActiveTabOnScroll)
+window.addEventListener('wheel', updateActiveTabOnScroll)
