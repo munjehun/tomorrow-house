@@ -60,9 +60,37 @@ function detectTabPanelPosition() {
     const id = panel.getAttribute('id')
     const position = window.scrollY + panel.getBoundingClientRect().top
     productTabPanelPositionMap[id] = position
-    console.log(window.innerHeight)
   })
+}
+
+function updateActiveTabOnScroll() {
+  const scrolledAmount =
+    window.scrollY +
+    (window.innerWidth >= 768 ? TOP_HEADER_DESKTOP + 80 : TOP_HEADER_MOBILE + 8)
+
+  let newActiveTab
+
+  if (scrolledAmount >= productTabPanelPositionMap['product-recommendation']) {
+    newActiveTab = productTabItemList[4]
+  } else if (scrolledAmount >= productTabPanelPositionMap['product-shipment']) {
+    newActiveTab = productTabItemList[3]
+  } else if (scrolledAmount >= productTabPanelPositionMap['product-inquiry']) {
+    newActiveTab = productTabItemList[2]
+  } else if (scrolledAmount >= productTabPanelPositionMap['product-review']) {
+    newActiveTab = productTabItemList[1]
+  } else {
+    newActiveTab = productTabItemList[0]
+  }
+
+  if (newActiveTab) {
+    if (newActiveTab !== currentActiveTab) {
+      currentActiveTab.classList.remove('is-active')
+      newActiveTab.classList.add('is-active')
+      currentActiveTab = newActiveTab
+    }
+  }
 }
 
 window.addEventListener('load', detectTabPanelPosition)
 window.addEventListener('resize', detectTabPanelPosition)
+window.addEventListener('scroll', updateActiveTabOnScroll)
