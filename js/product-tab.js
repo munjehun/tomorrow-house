@@ -7,19 +7,24 @@ const TOP_HEADER_MOBILE = 50 + 40 + 40
 
 let currentActiveTab = productTab.querySelector('.is-active')
 
-const productSpec = document.querySelector('[aria-labelledby="product-spec"]')
+let disableUpdating = false
 
-function activeProductTab() {
+// 탭 클릭시 is-active 활성화
+function toggleActiveTab() {
   const tabItem = this.parentNode
 
-  // 동일 탭 반복 클릭했을때 에러 방지
-  if (tabItem !== currentActiveTab) {
+  if (currentActiveTab !== tabItem) {
+    disableUpdating = true
     currentActiveTab.classList.remove('is-active')
     tabItem.classList.add('is-active')
     currentActiveTab = tabItem
+    setTimeout(function () {
+      disableUpdating = false
+    }, 500)
   }
 }
 
+// 탭 클릭시 스크롤 자동이동
 function scrollToTabPanel() {
   const tabPanelId = this.parentNode.getAttribute('aria-labelledby')
   const tabPanel = document.querySelector(`#${tabPanelId}`)
@@ -35,7 +40,7 @@ function scrollToTabPanel() {
 }
 
 productTabBtnList.forEach((btn) => {
-  btn.addEventListener('click', activeProductTab)
+  btn.addEventListener('click', toggleActiveTab)
   btn.addEventListener('click', scrollToTabPanel)
 })
 
@@ -55,6 +60,7 @@ const productTabPanelList = productTabIdList.map((panelId) =>
 
 const productTabPanelPositionMap = {}
 
+// 패널 위치 탐지
 function detectTabPanelPosition() {
   productTabPanelList.map((panel) => {
     const id = panel.getAttribute('id')
@@ -65,7 +71,12 @@ function detectTabPanelPosition() {
   updateActiveTabOnScroll()
 }
 
+// 스크롤에 따른 Active Tab
 function updateActiveTabOnScroll() {
+  if (disableUpdating) {
+    return
+  }
+
   const scrolledAmount =
     window.scrollY +
     (window.innerWidth >= 768 ? TOP_HEADER_DESKTOP + 80 : TOP_HEADER_MOBILE + 8)
@@ -107,4 +118,4 @@ function updateActiveTabOnScroll() {
 
 window.addEventListener('load', detectTabPanelPosition)
 window.addEventListener('resize', detectTabPanelPosition)
-window.addEventListener('wheel', updateActiveTabOnScroll)
+window.addEventListener('scroll', updateActiveTabOnScroll)

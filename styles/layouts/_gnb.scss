@@ -36,7 +36,7 @@
 
   @include responsive(T) {
     &-wrapper {
-      height: $gnb-height-md - 1px;
+      height: $gnb-height-md;
     }
 
     &-left {
