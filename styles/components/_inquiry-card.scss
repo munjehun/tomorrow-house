@@ -91,7 +91,7 @@
     }
 
     &-body {
-      @include text-style(16);
+      @include text-style(14);
 
       .inquiry-content {
         padding-left: 24px;
@@ -101,8 +101,16 @@
         }
       }
 
+      span {
+        @include text-style(16);
+      }
+
       .seller {
         margin-bottom: 8px;
+
+        strong {
+          @include text-style(16);
+        }
       }
     }
   }

@@ -2162,15 +2162,23 @@ i {
     .inquiry-card-header {
       margin-bottom: 20px; }
     .inquiry-card-body {
-      font-size: 16px;
+      font-size: 14px;
       line-height: 24px;
       letter-spacing: -0.01em; }
       .inquiry-card-body .inquiry-content {
         padding-left: 24px; }
         .inquiry-card-body .inquiry-content:first-child:not(:last-child) {
           margin-bottom: 16px; }
+      .inquiry-card-body span {
+        font-size: 16px;
+        line-height: 24px;
+        letter-spacing: -0.01em; }
       .inquiry-card-body .seller {
-        margin-bottom: 8px; } }
+        margin-bottom: 8px; }
+        .inquiry-card-body .seller strong {
+          font-size: 16px;
+          line-height: 24px;
+          letter-spacing: -0.01em; } }
 
 /*
 * Mobile (<768px)
