@@ -442,7 +442,7 @@ p{
   overflow: hidden;
   border: none;
   border-radius: 50%;
-  background-image: url("/assets/images/img-user-default.png");
+  background-image: url("./assets/images/img-user-default.png");
   background-size: contain;
   background-position: center center; }
   .avatar-32 img, .avatar-24 img {
@@ -894,7 +894,7 @@ i {
     border: 3px solid #ffffff;
     overflow: hidden;
     transition: all 0.2s ease-in-out;
-    background-image: url("/assets/images/img-user-default.png");
+    background-image: url("./assets/images/img-user-default.png");
     background-size: contain;
     background-position: center center; }
     .my-menu-button:hover {
