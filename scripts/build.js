@@ -93,7 +93,7 @@ async function optimizeImageAssets() {
     await imagemin(
       [path.resolve(__dirname, '../assets/images/*.{jpg,png,svg}')],
       {
-        destination: path.join(buildDir, 'assets/images'),
+        destination: path.join(buildDir, 'assets/images'), //🚫🚫🚫경로에 한글명있으면 안 됨!!!!!!!!!!!!🚫🚫🚫
         plugins: [imageminJpegtran()],
       }
     )
@@ -124,6 +124,7 @@ async function build() {
     path.resolve(__dirname, '../assets/fonts'),
     path.join(buildDir, 'assets/fonts')
   )
+
   copyFavicons()
 
   await optimizeImageAssets()
