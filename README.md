@@ -1,8 +1,96 @@
-# 내일의 집
+# 🏠 내일의 집
 
-### 1. GNB
+## [➰배포 사이트로 이동](https://munjehun.github.io/tomorrow-house/)
 
-- 로그인을 하지 않은 경우
+HTML, CSS(SCSS), Javascript로 만든 인테리어 플랫폼 사이트-오늘의 집 클론코딩, '내일의 집' 입니다.
+
+---
+
+## 시연 모습
+
+### 📱 모바일
+
+![ezgif com-video-to-gif](https://github.com/munjehun/tomorrow-house/assets/100513756/c0c41102-8fd4-4f87-8200-65b4a0bfd3e3)
+
+- 사이드바 활성화/비활성화 , 사이드바 메뉴 접기/펼치기
+- 검색칭 모달 활성화/비활성화
+
+![ezgif com-video-to-gif (1)](https://github.com/munjehun/tomorrow-house/assets/100513756/af53a06d-569b-4b55-9678-fe2cca2f4042)
+
+- 제품 사용 후기 사진 캐로셀
+- 프로덕트 탭 클릭시 해당 탭으로 자동 스크롤
+- 배송/환불 탭 기본상태 접기 -> 펼치기
+
+![ezgif com-video-to-gif (4)](https://github.com/munjehun/tomorrow-house/assets/100513756/45eb8251-cb11-48f1-b823-9335b7d957a6)
+
+- 스크롤 시 해당 탭에 해당하는 프로덕트 탭이 활성화
+- 리뷰의 도움됨 버튼 클릭시 활성화/비활성화
+- 즐겨찾기 버튼 클릭시 활성화/비활성화
+- 구매하기 버튼 클릭시 모달 활성화
+
+&nbsp;
+
+### 📲 태블릿
+
+![ezgif com-video-to-gif (2)](https://github.com/munjehun/tomorrow-house/assets/100513756/81680ba3-4b93-4309-a8ee-9776def15409)
+
+&nbsp;
+
+### 🖥️ 데스크탑
+
+![ezgif com-crop](https://github.com/munjehun/tomorrow-house/assets/100513756/eab2f601-8985-4f89-8757-143d7802e5a1)
+
+- GNB(이하 global navigation bar)의 프로필 사진 클릭시 마이메뉴 모달 활성화 / 다른 곳 클릭시 비활성화
+- 프로덕트 탭 이하로 스크롤 시 주문 창 항상 따라오도록
+
+---
+
+## 📖 주요 학습 내용
+
+### CSS
+
+- 그리드 시스템 (columns, unit, gutter)
+- [CSS Reset](https://velog.io/@miso1489/CSS-CSS-Reset)
+- SCSS 활용
+  - mixin의 활용
+    - Text Style
+    - Responsive (반응형 웹 구현)
+    - Position
+    - Flexbox
+  - 컴포넌트 모듈화 (버튼, 폼 요소, 아바타)
+  - calc
+- 스크롤 바
+  - 스타일링 (::-webkit-scrollbar)
+  - 오버스크롤 (overscroll-behavior)
+- UX 증가 고려 습관
+  - hover, focus, active, disable
+  - 애플이 권장한 버튼의 최소 사이즈 (44px)
+- 그라데이션 스타일링 (linear-gradient)
+- [z-index 규칙](https://velog.io/@miso1489/CSS-z-index-규칙-이것만-알면-모든-문제-해결)
+- `:not` 선택자
+- 컨텐츠 내 텍스트 표시 제한 (truncate, line-clamp)
+- 반응형 이미지 종횡비 맞추기
+
+### HTML
+
+- `<figure>`, `<figcaption>`
+- WAI-ARIA (role, aria-label, aria-hidden)
+- `<a>`의 href 속성 - tel, sms, mailto
+
+### Javascript
+
+- Carousel (tiny slider 라이브러리)
+- 이벤트 전파 (버블링, 캡처링)
+- `window`.scrollTo, `window`.scrollBy
+- `Element`.getBoundingClientRect
+- 스크롤 이벤트 성능개선 (lodash - throttle)
+
+---
+
+### GNB
+
+<details>
+<summary>로그인을 하지 않은 경우</summary>
 
 ```html
 <div class="button-group">
@@ -18,7 +106,10 @@
 </div>
 ```
 
-- 로그인을 했을 경우
+</details>
+
+<details>
+<summary>로그인을 했을 경우</summary>
 
 ```html
 <div class="button-group">
@@ -62,9 +153,12 @@
 </div>
 ```
 
-### 2. Sidebar
+</details>
 
-- 로그인을 하지 않은 경우
+### Sidebar
+
+<details>
+<summary>로그인을 하지 않은 경우</summary>
 
 ```html
 <div class="sidebar-auth">
@@ -73,7 +167,10 @@
 </div>
 ```
 
-- 로그인을 했을 경우
+</details>
+
+<details>
+<summary>로그인을 했을 경우</summary>
 
 ```html
 <div class="sidebar-user">
@@ -88,9 +185,12 @@
 </div>
 ```
 
-### 3. Review
+</details>
 
-- 리뷰가 0개인 경우
+### Review
+
+<details>
+<summary>리뷰가 0개인 경우</summary>
 
 ```html
 <section
@@ -113,7 +213,10 @@
 </section>
 ```
 
-- 리뷰가 1개 이상인 경우
+</details>
+
+<details>
+<summary>리뷰가 1개 이상인 경우</summary>
 
 ```html
 <section
@@ -364,3 +467,5 @@
   </div>
 </section>
 ```
+
+</details>
