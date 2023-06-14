@@ -83,7 +83,9 @@ HTML, CSS(SCSS), Javascript로 만든 인테리어 플랫폼 사이트-오늘의
 - 이벤트 전파 (버블링, 캡처링)
 - `window`.scrollTo, `window`.scrollBy
 - `Element`.getBoundingClientRect
-- 스크롤 이벤트 성능개선 (lodash - throttle)
+- 스크롤 이벤트 성능 개선
+  - lodash - throttle
+  - IntersectionObserver ✔️
 
 ---
 
